@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowDemoProject.Features
+namespace SpecFlowSeleniumDemoProject.Features
 {
     using TechTalk.SpecFlow;
     
@@ -81,6 +81,44 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
  testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a new employee with mandatory details")]
+        public virtual void CreateANewEmployeeWithMandatoryDetails()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new employee with mandatory details", ((string[])(null)));
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[]
+                {
+                        "Name",
+                        "Age",
+                        "Phone",
+                        "Email"});
+            table1.AddRow(new string[]
+                {
+                        "Masihur",
+                        "27",
+                        "12345678",
+                        "email@email.com"});
+            table1.AddRow(new string[]
+                {
+                        "Tamanna",
+                        "21",
+                        "98765432",
+                        "tamanna@email.com"});
+            table1.AddRow(new string[]
+                {
+                        "Mofi",
+                        "24",
+                        "5674822",
+                        "email@mofi.com"});
+#line 14
+ testRunner.When("I fill all the mandatory datails in form", ((string)(null)), table1, "When ");
 #line hidden
             this.ScenarioCleanup();
         }

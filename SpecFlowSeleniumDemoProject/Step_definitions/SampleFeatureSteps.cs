@@ -1,5 +1,7 @@
 ﻿using System;
+using SpecFlowSeleniumDemoProject;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace SpecFlowDemoProject
 {
@@ -29,6 +31,29 @@ namespace SpecFlowDemoProject
 				throw new Exception("Result is not Correct");
 			}
 				
+		}
+
+		[When(@"I fill all the mandatory datails in form")]
+		public void WhenIFillAllTheMandatoryDatailsInForm(Table table)
+		{
+			//EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
+
+			//Console.WriteLine(details.Age);
+			//Console.WriteLine(details.Name);
+			//Console.WriteLine(details.Phone);
+			//Console.WriteLine(details.Email);
+
+			var details = table.CreateSet<EmployeeDetails>();
+
+			foreach (EmployeeDetails employee in details)
+			{
+				Console.WriteLine("Details for Employee: " + employee.Name);
+				Console.WriteLine(employee.Age);
+				Console.WriteLine(employee.Name);
+				Console.WriteLine(employee.Phone);
+				Console.WriteLine(employee.Email);
+			}
+
 		}
 
 	}
