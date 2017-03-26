@@ -16,3 +16,12 @@ Scenario: Create a new employee with mandatory details
 	|  Masihur  |  27   | 12345678  | email@email.com   |
 	|  Tamanna  |  21   | 98765432  | tamanna@email.com |
 	|  Mofi     |  24   | 5674822   | email@mofi.com    |
+
+Scenario Outline: Create a new employee with given details
+	When I fill the mandatory datails in form <Name>, <Age> and <Phone>
+
+Examples:
+	|  Name     |  Age  |   Phone   |
+	|  Masihur  |  27   | 12345678  |
+	|  Tamanna  |  21   | 98765432  |
+	|  Mofi     |  24   | 5674822   |

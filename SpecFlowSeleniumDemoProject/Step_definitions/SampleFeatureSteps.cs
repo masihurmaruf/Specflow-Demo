@@ -56,6 +56,14 @@ namespace SpecFlowDemoProject
 
 		}
 
+		[When(@"I fill the mandatory datails in form (.*), (.*) and (.*)")]
+		public void WhenIFillTheMandatoryDatailsInFormMasihurAnd(string name, int age, Int64 phone)
+		{
+			Console.WriteLine("Name :" + name);
+			Console.WriteLine("Age :" + age);
+			Console.WriteLine("Phone :" + phone);
+		}
+
 	}
 }
 
