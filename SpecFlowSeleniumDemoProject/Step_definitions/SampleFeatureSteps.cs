@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SpecFlowSeleniumDemoProject;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using SpecFlow.Assist.Dynamic;
 
 namespace SpecFlowDemoProject
 {
@@ -37,6 +38,8 @@ namespace SpecFlowDemoProject
 		[When(@"I fill all the mandatory datails in form")]
 		public void WhenIFillAllTheMandatoryDatailsInForm(Table table)
 		{
+			/// Normal CreateInstance Method
+
 			//EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
 
 			//Console.WriteLine(details.Age);
@@ -44,17 +47,30 @@ namespace SpecFlowDemoProject
 			//Console.WriteLine(details.Phone);
 			//Console.WriteLine(details.Email);
 
-			var details = table.CreateSet<EmployeeDetails>();
+			/// Normal CreateSet Method
 
-			foreach (EmployeeDetails employee in details)
+			//var details = table.CreateSet<EmployeeDetails>();
+
+			//foreach (EmployeeDetails employee in details)
+			//{
+			//	Console.WriteLine("Details for Employee: " + employee.Name);
+			//	Console.WriteLine(employee.Age);
+			//	Console.WriteLine(employee.Name);
+			//	Console.WriteLine(employee.Phone);
+			//	Console.WriteLine(employee.Email);
+			//}
+
+			/// Dynamic CreateSet method
+			var  details = table.CreateDynamicSet();
+
+			foreach (var emp in details)
 			{
-				Console.WriteLine("Details for Employee: " + employee.Name);
-				Console.WriteLine(employee.Age);
-				Console.WriteLine(employee.Name);
-				Console.WriteLine(employee.Phone);
-				Console.WriteLine(employee.Email);
-			}
+				Console.WriteLine(emp.Age);
+				Console.WriteLine(emp.Name);
+				Console.WriteLine(emp.Phone);
+				Console.WriteLine(emp.Email);
 
+			}
 		}
 
 		[When(@"I fill the mandatory datails in form (.*), (.*) and (.*)")]
